@@ -24,5 +24,6 @@ This repository is a core component of a complete **CI/CD & GitOps pipeline** bu
 
 ```text
 .
-├── deployment.yaml   # Kubernetes Deployment manifest (Image tags dynamically updated by Jenkins CI)
-└── service.yaml      # Kubernetes Service manifest (Exposes the application inside the cluster)
+├── deployment.yaml     # Kubernetes Deployment manifest (Image tags dynamically updated by Jenkins CI)
+└── service.yaml        # Kubernetes Service manifest (Exposes the application inside the cluster)
+└── kustomization.yaml  # Argo CD was installed declaratively using Kustomize rather than Helm
