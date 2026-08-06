@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: bootstrap-app
-        image: mansour19/bootstrap-app:bb56846e4bd98e6f1821d913b5641820b1042a55
+        image: mansour19/bootstrap-app:3339644ea185e9d45dde0b674f5dbdee5e105b5a
         imagePullPolicy: Always
         ports:
         - containerPort: 80
