@@ -1,9 +1,15 @@
-# GitOps Kubernetes Manifests
+# 🚀 Centralized GitOps Manifests Repository
 
 > **Single Source of Truth (SSOT)** for Kubernetes deployment manifests managed through a centralized **GitOps** workflow with **Argo CD**.
 
 ---
-
+![GitOps](https://img.shields.io/badge/GitOps-ArgoCD-orange?logo=argo&logoColor=white)
+![ArgoCD](https://img.shields.io/badge/ArgoCD-Continuous_Deployment-EF7B4D?logo=argo&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
+![Kustomize](https://img.shields.io/badge/Kustomize-IaC-blue)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI-D24939?logo=jenkins&logoColor=white)
+![GitLab CI](https://img.shields.io/badge/GitLab-CI/CD-FC6D26?logo=gitlab&logoColor=white)
+---
 # 🎯 Overview
 
 This repository serves as the centralized GitOps repository for multiple independent applications deployed on a Kubernetes cluster.
