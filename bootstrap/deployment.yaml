@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: bootstrap-app
-        image: mansour19/bootstrap-app:latest      # Will be updated by GitLab CI
+        image: mansour19/bootstrap-app:c144a6b15e3fcc4b85d9fda5782f7e08b6b58a64
         imagePullPolicy: Always
         ports:
         - containerPort: 80
