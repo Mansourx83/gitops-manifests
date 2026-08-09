@@ -45,7 +45,7 @@ spec:
     path: spring-boot
   destination:
     server: https://kubernetes.default.svc
-    namespace: jenkins
+    namespace: apps
   syncPolicy:
     automated:
       prune: true
@@ -65,7 +65,7 @@ spec:
     path: bootstrap
   destination:
     server: https://kubernetes.default.svc
-    namespace: jenkins
+    namespace: apps
   syncPolicy:
     automated:
       prune: true

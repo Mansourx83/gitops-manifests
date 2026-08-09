@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: bootstrap-app-service
-  namespace: jenkins
+  namespace: apps
   labels:
     app: bootstrap-app
 spec:
