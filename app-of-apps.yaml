@@ -1,5 +1,4 @@
 ---
-# AppProject (يعطي صلاحيات للـ Applications)
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -13,7 +12,6 @@ spec:
     server: '*'
 
 ---
-# Parent Application (App of Apps)
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -34,7 +32,6 @@ spec:
       selfHeal: true
 
 ---
-# Child 1: Spring Boot
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -55,7 +52,6 @@ spec:
       selfHeal: true
 
 ---
-# Child 2: Bootstrap
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
