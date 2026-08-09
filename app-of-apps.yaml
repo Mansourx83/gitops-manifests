@@ -1,0 +1,76 @@
+---
+# AppProject (يعطي صلاحيات للـ Applications)
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: devops-platform
+  namespace: argocd
+spec:
+  sourceRepos:
+  - 'https://github.com/Mansourx83/spring-boot-app-manifests-gitops.git'
+  destinations:
+  - namespace: '*'
+    server: '*'
+
+---
+# Parent Application (App of Apps)
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-platform
+  namespace: argocd
+spec:
+  project: devops-platform
+  source:
+    repoURL: https://github.com/Mansourx83/spring-boot-app-manifests-gitops.git
+    targetRevision: main
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+---
+# Child 1: Spring Boot
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-boot-app
+  namespace: argocd
+spec:
+  project: devops-platform
+  source:
+    repoURL: https://github.com/Mansourx83/spring-boot-app-manifests-gitops.git
+    targetRevision: main
+    path: spring-boot
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jenkins
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+---
+# Child 2: Bootstrap
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap-app
+  namespace: argocd
+spec:
+  project: devops-platform
+  source:
+    repoURL: https://github.com/Mansourx83/spring-boot-app-manifests-gitops.git
+    targetRevision: main
+    path: bootstrap
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jenkins
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
