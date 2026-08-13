@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: mansour19/spring-boot-demo:19
+        image: mansour19/spring-boot-demo:23
         ports:
         - containerPort: 8080
